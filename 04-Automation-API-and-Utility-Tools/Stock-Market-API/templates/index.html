@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📈 Stock Market Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Live Stock Tracker</h1>
+    <p class="subtitle">Get real-time end-of-day stock prices</p>
+
+    <form method="GET" class="form">
+      <input type="text" name="symbol" placeholder="Enter Stock Symbol (e.g. TSLA)" required>
+      <button type="submit">Track</button>
+    </form>
+
+    {% if stock_data %}
+    <div class="card">
+      <h2>{{ stock_data.symbol }} — {{ stock_data.date }}</h2>
+      <div class="stats">
+        <div><strong>Open:</strong> ${{ stock_data.open }}</div>
+        <div><strong>High:</strong> ${{ stock_data.high }}</div>
+        <div><strong>Low:</strong> ${{ stock_data.low }}</div>
+        <div><strong>Close:</strong> ${{ stock_data.close }}</div>
+        <div><strong>Volume:</strong> {{ stock_data.volume }}</div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>

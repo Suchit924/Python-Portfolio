@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kanban Todo Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Main Title -->
+    <h1>Kanban Todo Board</h1>
+
+    <!-- New Task Form -->
+    <div class="add-task-container">
+        <h2>Add a New Task</h2>
+        <form action="/add" method="POST" class="add-task">
+            <input type="text" name="content" placeholder="New Task..." required>
+            <input type="date" name="due_date">
+            <select name="priority">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+
+    <!-- Kanban Board -->
+    <div class="board">
+        <!-- To Do Column -->
+        <div class="column" id="todo">
+            <h2>To Do</h2>
+            {% for task in tasks %}
+                {% if task.status == 'todo' %}
+                    <div class="task {{ 'low-priority' if task.priority == 'Low' else 'medium-priority' if task.priority == 'Medium' else 'high-priority' }}" draggable="true" data-id="{{ task.id }}">
+                        <p>{{ task.content }}</p>
+                        <small>Due: {{ task.due_date }}</small>
+                        <small>Priority: {{ task.priority }}</small>
+                        <a href="/delete/{{ task.id }}">🗑️</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- In Progress Column -->
+        <div class="column" id="inprogress">
+            <h2>In Progress</h2>
+            {% for task in tasks %}
+                {% if task.status == 'inprogress' %}
+                    <div class="task {{ 'low-priority' if task.priority == 'Low' else 'medium-priority' if task.priority == 'Medium' else 'high-priority' }}" draggable="true" data-id="{{ task.id }}">
+                        <p>{{ task.content }}</p>
+                        <small>Due: {{ task.due_date }}</small>
+                        <small>Priority: {{ task.priority }}</small>
+                        <a href="/delete/{{ task.id }}">🗑️</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Done Column -->
+        <div class="column" id="done">
+            <h2>Done</h2>
+            {% for task in tasks %}
+                {% if task.status == 'done' %}
+                    <div class="task {{ 'low-priority' if task.priority == 'Low' else 'medium-priority' if task.priority == 'Medium' else 'high-priority' }}" draggable="true" data-id="{{ task.id }}">
+                        <p>{{ task.content }}</p>
+                        <small>Due: {{ task.due_date }}</small>
+                        <small>Priority: {{ task.priority }}</small>
+                        <a href="/delete/{{ task.id }}">🗑️</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

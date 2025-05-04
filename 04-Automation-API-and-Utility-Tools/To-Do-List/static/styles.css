@@ -1,0 +1,160 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f8fc;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.add-task-container {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.add-task-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.add-task {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.add-task input, .add-task select, .add-task button {
+    padding: 12px 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-task input, .add-task select {
+    width: 200px;
+    background-color: #fff;
+    color: #333;
+}
+
+.add-task button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.add-task button:hover {
+    background-color: #45a049;
+}
+
+/* Board Layout */
+.board {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Column Styles */
+.column {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    min-height: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.column:hover {
+    transform: scale(1.05);
+}
+
+.column h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.column .task {
+    background: #f3f4f7;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.column .task:hover {
+    transform: translateY(-5px);
+    background: #e9eff6;
+}
+
+.task p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.task small {
+    display: block;
+    color: #888;
+    font-size: 0.9em;
+}
+
+.task a {
+    text-decoration: none;
+    color: red;
+    font-size: 1.2em;
+    float: right;
+    transition: color 0.2s ease;
+}
+
+.task a:hover {
+    color: #d9534f;
+}
+
+/* Task Priority Styling */
+.task.low-priority {
+    border-left: 5px solid #28a745;
+}
+
+.task.medium-priority {
+    border-left: 5px solid #ffc107;
+}
+
+.task.high-priority {
+    border-left: 5px solid #dc3545;
+}
+
+/* Column Backgrounds */
+#todo {
+    background: #fce4ec;
+}
+
+#inprogress {
+    background: #ffeb3b;
+}
+
+#done {
+    background: #c8e6c9;
+}

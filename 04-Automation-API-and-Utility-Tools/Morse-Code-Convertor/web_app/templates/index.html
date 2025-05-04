@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse Code Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Morse Code Converter</h1>
+
+    <form method="POST">
+        <h3>Text → Morse</h3>
+        <input type="text" name="text" placeholder="Type text (e.g., SOS)">
+        <button type="submit">Convert</button>
+
+        <h3>Morse → Text</h3>
+        <input type="text" name="morse" placeholder="Enter Morse (e.g., ... --- ...)">
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if result %}
+    <div class="result-section">
+        <h3>Result:</h3>
+        <textarea id="morse-result" readonly>{{ result }}</textarea>
+        <button onclick="playMorse()" class="play-button">🔊 Play Morse</button>
+        <div class="controls">
+            <label>Speed: <input type="range" id="speed" min="50" max="200" value="100"></label>
+            <label>Volume: <input type="range" id="volume" min="0" max="100" value="70"></label>
+        </div>
+    </div>
+
+    <script>
+    function playMorse() {
+        const morse = document.getElementById('morse-result').value.trim();
+        const speed = document.getElementById('speed').value / 100;
+        const volume = document.getElementById('volume').value / 100;
+
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioContext();
+        const gainNode = ctx.createGain();
+        gainNode.gain.value = volume;
+        gainNode.connect(ctx.destination);
+
+        let time = ctx.currentTime;
+        const baseDotLength = 0.2; // seconds
+
+        morse.split('').forEach(symbol => {
+            const oscillator = ctx.createOscillator();
+            oscillator.type = "sine";
+            oscillator.frequency.value = 880;
+            oscillator.connect(gainNode);
+
+            switch(symbol) {
+                case '.':
+                    oscillator.start(time);
+                    oscillator.stop(time + baseDotLength / speed);
+                    time += (baseDotLength * 1.5) / speed;
+                    break;
+                case '-':
+                    oscillator.start(time);
+                    oscillator.stop(time + (baseDotLength * 3) / speed);
+                    time += (baseDotLength * 3.5) / speed;
+                    break;
+                case ' ':
+                    time += (baseDotLength * 3) / speed;
+                    break;
+                case '/':
+                    time += (baseDotLength * 7) / speed;
+                    break;
+            }
+        });
+    }
+    </script>
+    {% endif %}
+</body>
+</html>

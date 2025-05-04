@@ -1,0 +1,68 @@
+.gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+.profile-img {
+  border-radius: 50%;
+  height: 100px;
+}
+
+
+footer {
+  background-color: #f8f9fa; /* Light gray background for contrast */
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin: 0.5rem 0;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #007bff; /* Link color */
+  transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: #0056b3; /* Darker shade on hover */
+}
+
+footer p {
+  color: #6c757d; /* Muted text color */
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}

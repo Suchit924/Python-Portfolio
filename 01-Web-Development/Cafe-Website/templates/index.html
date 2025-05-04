@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cafes Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Cafes with Wifi and Good Coffee</h1>
+    <a href="{{ url_for('add_cafe') }}" class="add-btn">➕ Add New Cafe</a>
+
+    <div class="cafes-container">
+        {% for cafe in cafes %}
+        <div class="cafe-card">
+            <h2>{{ cafe.name }}</h2>
+            <img src="{{ cafe.img_url }}" alt="{{ cafe.name }}" width="300">
+            <p><strong>Location:</strong> {{ cafe.location }}</p>
+            <p><a href="{{ cafe.map_url }}" target="_blank">🗺️ View on Map</a></p>
+            <ul>
+                <li>Wifi: {{ 'Yes' if cafe.has_wifi else 'No' }}</li>
+                <li>Sockets: {{ 'Yes' if cafe.has_sockets else 'No' }}</li>
+                <li>Can Take Calls: {{ 'Yes' if cafe.can_take_calls else 'No' }}</li>
+                <li>Seats: {{ cafe.seats }}</li>
+                <li>Coffee Price: {{ cafe.coffee_price }}</li>
+            </ul>
+            <a href="{{ url_for('delete_cafe', id=cafe.id) }}" class="delete-btn">❌ Delete</a>
+        </div>
+        {% else %}
+        <p>No cafes found. Please add one!</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

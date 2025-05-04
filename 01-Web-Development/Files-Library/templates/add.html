@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Book</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Add New Book</h1>
+    <form action="{{ url_for('add')}}" method="POST">
+      <div class="form-group">
+        <label for="title">Book Name</label>
+        <input id="title" name="title" type="text" required />
+      </div>
+      <div class="form-group">
+        <label for="author">Book Author</label>
+        <input id="author" name="author" type="text" required />
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input id="rating" name="rating" type="number" min="0" max="10" step="0.1" required />
+      </div>
+      <button type="submit">Add Book</button>
+    </form>
+  </body>
+</html>

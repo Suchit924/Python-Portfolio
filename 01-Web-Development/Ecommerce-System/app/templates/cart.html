@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Your Cart</h2>
+{% if items %}
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ '%.2f' % (item.product.price / 100) }}</td>
+            <td>${{ '%.2f' % ((item.product.price * item.quantity) / 100) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<h3>Total: ${{ '%.2f' % (total / 100) }}</h3>
+<form action="{{ url_for('main.checkout') }}" method="post">
+    <button type="submit">Proceed to Checkout</button>
+</form>
+{% else %}
+<p>Your cart is empty.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ product.name }}</h2>
+<img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}">
+<p>${{ '%.2f' % (product.price / 100) }}</p>
+<p>{{ product.description }}</p>
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('main.add_to_cart', product_id=product.id) }}">Add to Cart</a>
+{% else %}
+    <p><a href="{{ url_for('main.login') }}">Login</a> to add to cart.</p>
+{% endif %}
+{% endblock %}

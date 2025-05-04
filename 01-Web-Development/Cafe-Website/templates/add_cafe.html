@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Cafe</title>
+</head>
+<body>
+    <h1>Add a New Cafe</h1>
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Map URL:</label><br>
+        <input type="text" name="map_url" required><br><br>
+
+        <label>Image URL:</label><br>
+        <input type="text" name="img_url" required><br><br>
+
+        <label>Location:</label><br>
+        <input type="text" name="location" required><br><br>
+
+        <label>Has Sockets:</label>
+        <input type="checkbox" name="has_sockets"><br><br>
+
+        <label>Has Wifi:</label>
+        <input type="checkbox" name="has_wifi"><br><br>
+
+        <label>Can Take Calls:</label>
+        <input type="checkbox" name="can_take_calls"><br><br>
+
+        <label>Seats:</label><br>
+        <input type="text" name="seats" required><br><br>
+
+        <label>Coffee Price:</label><br>
+        <input type="text" name="coffee_price" required><br><br>
+
+        <button type="submit">Add Cafe</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Back to Cafe List</a>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #006400; /* Dark green background color */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Use RGBA to add transparency to the background color */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 300px;
+            text-align: center;
+            color: #333333;
+        }
+        h2 {
+            color: #ff5722; /* Orange */
+            margin-bottom: 20px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 25px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            background-color: #e0e0e0; /* Light grey */
+            border: 2px solid #e0e0e0; /* Light grey */
+            color: #333333;
+        }
+        input[type="submit"] {
+            background-color: #2196f3; /* Blue */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #1976d2; /* Darker blue */
+        }
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        p a {
+            text-decoration: none;
+            color: #ff5722; /* Orange */
+            font-weight: bold;
+        }
+        p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Sign Up">
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+</body>
+</html>
