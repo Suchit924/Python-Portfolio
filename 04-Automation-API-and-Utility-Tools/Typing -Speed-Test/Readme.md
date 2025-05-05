@@ -14,8 +14,6 @@ A fun and interactive Python application to test and improve your typing speed a
 - time module
 - random module
 
-## 📦 Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/Typing-Speed-Test.git
-   cd Typing-Speed-Test
+## ▶️ Run the App
+```bash
+python main.py
