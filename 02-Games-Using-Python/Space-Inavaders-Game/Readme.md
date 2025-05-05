@@ -20,7 +20,7 @@ A simple arcade-style shooter game inspired by the classic Space Invaders. The p
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/space-invaders-game.git
+   git clone https://github.com/Suchit924/space-invaders-game.git
    ```
 2. Navigate to the project folder:
    ```bash
