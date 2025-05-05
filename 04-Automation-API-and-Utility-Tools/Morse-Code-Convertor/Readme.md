@@ -14,7 +14,7 @@ A Python tool to convert English text to Morse code and vice versa.
 ## ▶️ How to Use
 1. Run the script:
    ```bash
-   python morse_converter.py
+   python main.py
    ```
 2. Choose conversion mode and enter your text.
    ```bash
