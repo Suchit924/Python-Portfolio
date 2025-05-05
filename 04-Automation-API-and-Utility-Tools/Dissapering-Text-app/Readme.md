@@ -13,4 +13,4 @@ A typing challenge game: if you stop typing, your text disappears!
 
 ## ▶️ Run the App
 ```bash
-python disappearing_text.py
+python main.py
