@@ -19,4 +19,12 @@ A Frogger-style game using Python's Turtle graphics, where the player controls a
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/turtle-crossing.git
+   git clone https://github.com/Suchit924/snake-game.git
+   ```
+2. Navigate to the project folder:
+   ```bash
+   cd turtle-crossing
+   ```
+3. Run the game:
+   ```bash
+   python main.py
