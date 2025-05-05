@@ -24,7 +24,7 @@ A simple arcade-style shooter game inspired by the classic Space Invaders. The p
    ```
 2. Navigate to the project folder:
    ```bash
-   cd turtle-crossing
+   cd space-invaders-game
    ```
 3. Run the game:
    ```bash
