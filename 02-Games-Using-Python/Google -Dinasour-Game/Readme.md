@@ -1,4 +1,4 @@
-# Google-Dinosaur-Game
+# 🐱‍🐉 Google-Dinosaur-Game
 
 ## Description
 The Google Dinosaur game, which appears when there's no internet connection and An automated bot for the Google Dinosaur game. The bot uses keyboard automation to control the dinosaur and play the game autonomously.
