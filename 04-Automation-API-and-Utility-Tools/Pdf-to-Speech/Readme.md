@@ -17,7 +17,7 @@ This script converts PDF documents into spoken words using Text-to-Speech.
 pip install pyttsx3 PyPDF2
 ```
 
-## ▶️ Usage
+## ▶️ Run
 ```bash
 python pdf_to_speech.py
 ```
