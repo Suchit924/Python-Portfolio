@@ -22,4 +22,4 @@ Analyze global space missions from 1997 onwards including launches, success rate
 
 2. Open the notebook:
    ```bash
-   jupyter notebook fatal_force_analysis.ipynb
+   jupyter notebook space_mission_analysis.ipynb
