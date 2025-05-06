@@ -14,3 +14,12 @@ Analyze global space missions from 1997 onwards including launches, success rate
 
 ## 📦 Dataset
 - Space missions dataset from Kaggle or public repositories
+
+## ▶️ Run
+1. Install requirements:
+   ```bash
+   pip install pandas matplotlib seaborn
+
+2. Open the notebook:
+   ```bash
+   jupyter notebook fatal_force_analysis.ipynb
